@@ -1,4 +1,4 @@
-﻿namespace AutorisationForm
+﻿namespace CarShop
 {
     partial class AutorisationWindow
     {
@@ -138,7 +138,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(220)))));
-            this.BackgroundImage = global::AutorisationForm.Properties.Resources.backgroundAutorisation;
+            this.BackgroundImage = global::CarShop.Properties.Resources.backgroundAutorisation;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.ConnectionLink);

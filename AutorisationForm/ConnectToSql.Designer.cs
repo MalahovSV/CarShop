@@ -1,5 +1,5 @@
 ﻿
-namespace AutorisationForm
+namespace CarShop
 {
     partial class ConnectToSql
     {

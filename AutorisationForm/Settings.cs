@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace AutorisationForm
+namespace CarShop
 {
     public class Settings
     {

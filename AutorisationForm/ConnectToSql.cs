@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 
 
-namespace AutorisationForm
+namespace CarShop
 {
     public partial class ConnectToSql : Form
     {

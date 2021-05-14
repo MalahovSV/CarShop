@@ -1,4 +1,4 @@
-﻿namespace AutorisationForm
+﻿namespace CarShop
 {
     partial class Catalog
     {

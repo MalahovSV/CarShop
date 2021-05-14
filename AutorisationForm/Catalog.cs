@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 
-namespace AutorisationForm
+namespace CarShop
 {
     public partial class Catalog : Form
     {

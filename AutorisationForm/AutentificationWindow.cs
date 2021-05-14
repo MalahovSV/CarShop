@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 
 
-namespace AutorisationForm
+namespace CarShop
 {
     public partial class AutorisationWindow : Form
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AutorisationForm.Properties {
+namespace CarShop.Properties {
     using System;
     
     
