@@ -94,7 +94,11 @@ namespace CarShop
                 }
             }
         }
-
+        /// <summary>
+        /// Отобразить/скрыть пароль
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
