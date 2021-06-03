@@ -45,6 +45,8 @@
             this.SelectImage = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Power_Engine = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,7 +128,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 178);
+            this.label5.Location = new System.Drawing.Point(12, 212);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(169, 20);
             this.label5.TabIndex = 11;
@@ -135,7 +137,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 218);
+            this.label6.Location = new System.Drawing.Point(12, 252);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 20);
             this.label6.TabIndex = 12;
@@ -143,7 +145,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(204, 496);
+            this.button1.Location = new System.Drawing.Point(204, 530);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(180, 53);
             this.button1.TabIndex = 14;
@@ -153,7 +155,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(239, 218);
+            this.richTextBox1.Location = new System.Drawing.Point(239, 252);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(292, 62);
             this.richTextBox1.TabIndex = 15;
@@ -162,7 +164,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(239, 173);
+            this.dateTimePicker1.Location = new System.Drawing.Point(239, 207);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(292, 27);
             this.dateTimePicker1.TabIndex = 16;
@@ -171,7 +173,7 @@
             // 
             // SelectImage
             // 
-            this.SelectImage.Location = new System.Drawing.Point(239, 286);
+            this.SelectImage.Location = new System.Drawing.Point(239, 320);
             this.SelectImage.Name = "SelectImage";
             this.SelectImage.Size = new System.Drawing.Size(292, 49);
             this.SelectImage.TabIndex = 17;
@@ -182,7 +184,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 300);
+            this.label7.Location = new System.Drawing.Point(12, 334);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(158, 20);
             this.label7.TabIndex = 18;
@@ -190,18 +192,37 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(239, 341);
+            this.pictureBox1.Location = new System.Drawing.Point(239, 375);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(292, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 175);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(182, 20);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Мощность двигателя";
+            // 
+            // Power_Engine
+            // 
+            this.Power_Engine.Location = new System.Drawing.Point(239, 172);
+            this.Power_Engine.Margin = new System.Windows.Forms.Padding(5);
+            this.Power_Engine.Name = "Power_Engine";
+            this.Power_Engine.Size = new System.Drawing.Size(292, 27);
+            this.Power_Engine.TabIndex = 20;
+            // 
             // AddCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 561);
+            this.ClientSize = new System.Drawing.Size(594, 631);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.Power_Engine);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.SelectImage);
@@ -220,8 +241,8 @@
             this.Controls.Add(this.Model);
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.MaximumSize = new System.Drawing.Size(610, 600);
-            this.MinimumSize = new System.Drawing.Size(610, 600);
+            this.MaximumSize = new System.Drawing.Size(610, 670);
+            this.MinimumSize = new System.Drawing.Size(610, 670);
             this.Name = "AddCar";
             this.Text = "Добавление авто";
             this.Load += new System.EventHandler(this.AddCar_Load);
@@ -250,5 +271,7 @@
         private System.Windows.Forms.Button SelectImage;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox Power_Engine;
     }
 }

@@ -65,12 +65,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClientControl.Designer.cs">
+      <DependentUpon>ClientControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConnectToSql.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConnectToSql.Designer.cs">
       <DependentUpon>ConnectToSql.cs</DependentUpon>
     </Compile>
+    <Compile Include="Encryption.cs" />
     <Compile Include="UpdateCar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +111,16 @@
     <Compile Include="ShowCar.Designer.cs">
       <DependentUpon>ShowCar.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="UserWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserWindow.Designer.cs">
+      <DependentUpon>UserWindow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ClientControl.resx">
+      <DependentUpon>ClientControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConnectToSql.resx">
       <DependentUpon>ConnectToSql.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +148,9 @@
     </Compile>
     <EmbeddedResource Include="ShowCar.resx">
       <DependentUpon>ShowCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserWindow.resx">
+      <DependentUpon>UserWindow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

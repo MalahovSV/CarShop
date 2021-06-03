@@ -12,14 +12,21 @@ using System.Windows.Forms;
 
 namespace CarShop
 {
-    public partial class AddCar : Form
+    public partial class UpdateCar : Form
     {
         private readonly Settings Settings = new Settings();
+
         string ConnectionString;
+
         int SelectedIndexMake = 0;
-        public AddCar()
+        string IDCar;
+        byte[] ImageData;
+
+        public UpdateCar(string ID)
         {
             InitializeComponent();
+            IDCar = ID;
+            Settings = new Settings();
             ConnectionString = Settings.ReadSettingSqlConnection();
         }
 
@@ -31,22 +38,33 @@ namespace CarShop
                 await connection.OpenAsync();
                 SqlCommand command = new SqlCommand();
                 command.Connection = connection;
-                command.CommandText = @"INSERT INTO car VALUES (@Model, @Price, @ID_Make, @Year_car, @V_engine, @About, @Image_car)";
+                command.CommandText = $@"update car set Model = @Model, 
+                Price = @Price, ID_Make = @ID_Make, Year_car = @Year_car, 
+                V_Engine = @V_engine, About = @About, Image_car = @Image_car, 
+                Power_Engine = @Power_Engine
+                where ID = {IDCar}";
                 command.Parameters.Add("@Model", SqlDbType.NVarChar);
-                command.Parameters.Add("@Price", SqlDbType.NVarChar);
+                command.Parameters.Add("@Price", SqlDbType.Decimal);
                 command.Parameters.Add("@ID_Make", SqlDbType.Int);
                 command.Parameters.Add("@Year_car", SqlDbType.Date);
                 command.Parameters.Add("@V_engine", SqlDbType.Decimal);
-                command.Parameters.Add("@About", SqlDbType.Text);            
+                command.Parameters.Add("@About", SqlDbType.Text);
+                command.Parameters.Add("@Power_Engine", SqlDbType.Int);
 
 
                 // массив для хранения бинарных данных файла
-                byte[] imageData;
-                using (FileStream fs = new FileStream(SelectImage.Text, FileMode.Open))
+                if (SelectImage.Text != "...")
                 {
-                    imageData = new byte[fs.Length];
-                    fs.Read(imageData, 0, imageData.Length);
-                    command.Parameters.Add("@Image_car", SqlDbType.Image, Convert.ToInt32(imageData.Length));
+                    using (FileStream fs = new FileStream(SelectImage.Text, FileMode.Open))
+                    {
+                        ImageData = new byte[fs.Length];
+                        fs.Read(ImageData, 0, ImageData.Length);
+                        command.Parameters.Add("@Image_car", SqlDbType.Image, Convert.ToInt32(fs.Length));
+                    }
+                }
+                else
+                {
+                    command.Parameters.Add("@Image_car", SqlDbType.Image, Convert.ToInt32(ImageData.Length));
                 }
                 // передаем данные в команду через параметры
                 command.Parameters["@Model"].Value = Model.Text;
@@ -55,10 +73,10 @@ namespace CarShop
                 command.Parameters["@Year_car"].Value = dateTimePicker1.Value;
                 command.Parameters["@V_engine"].Value = VEngine.Text;
                 command.Parameters["@About"].Value = richTextBox1.Text;
-                command.Parameters["@Image_car"].Value = imageData;
-
+                command.Parameters["@Image_car"].Value = ImageData;
+                command.Parameters["@Power_Engine"].Value = Power_Engine.Text;
                 await command.ExecuteNonQueryAsync();
-                MessageBox.Show("Файл сохранен");
+                MessageBox.Show("Файл изменён");
             }
         }
 
@@ -78,7 +96,32 @@ namespace CarShop
                 }
                 Make.SelectedIndex = 0;
             }
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string command = $@"select Name_Make, Model, Car.Year_car, Car.Price, Car.V_Engine, Car.About, Car.Image_car, Car.Power_Engine from Make, Car
+where Car.ID_Make = Make.ID and Car.ID = { IDCar}";
+                SqlCommand command1 = new SqlCommand(command, connection);
+                SqlDataReader reader = command1.ExecuteReader();
+                while (reader.Read())
+                {
+                    Make.SelectedItem = reader.GetString(0);
+                    Model.Text = reader.GetString(1);
+                    dateTimePicker1.Value = reader.GetDateTime(2);
+                    Price.Text = reader.GetDecimal(3).ToString();                    
+                    VEngine.Text = reader.GetDecimal(4).ToString();
+                    
+                    richTextBox1.Text = reader.GetString(5);
+                    
+                   
+                    ImageData = (byte[])reader.GetValue(6);
+                    Stream stream = new MemoryStream(ImageData);
+                    var bitmap = new Bitmap(stream);
+                    pictureBox1.Image = bitmap;
 
+                    Power_Engine.Text = reader.GetInt32(7).ToString();
+                }
+            }
         }
 
         private async void button1_Click(object sender, EventArgs e)

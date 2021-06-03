@@ -42,6 +42,8 @@ namespace CarShop
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.PowerEngine = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +51,7 @@ namespace CarShop
             // NameCar
             // 
             this.NameCar.AutoSize = true;
-            this.NameCar.Location = new System.Drawing.Point(179, 59);
+            this.NameCar.Location = new System.Drawing.Point(200, 59);
             this.NameCar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.NameCar.Name = "NameCar";
             this.NameCar.Size = new System.Drawing.Size(97, 20);
@@ -59,7 +61,7 @@ namespace CarShop
             // DateCar
             // 
             this.DateCar.AutoSize = true;
-            this.DateCar.Location = new System.Drawing.Point(182, 97);
+            this.DateCar.Location = new System.Drawing.Point(200, 97);
             this.DateCar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.DateCar.Name = "DateCar";
             this.DateCar.Size = new System.Drawing.Size(89, 20);
@@ -70,7 +72,7 @@ namespace CarShop
             // MakeCar
             // 
             this.MakeCar.AutoSize = true;
-            this.MakeCar.Location = new System.Drawing.Point(179, 23);
+            this.MakeCar.Location = new System.Drawing.Point(200, 23);
             this.MakeCar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.MakeCar.Name = "MakeCar";
             this.MakeCar.Size = new System.Drawing.Size(92, 20);
@@ -80,7 +82,7 @@ namespace CarShop
             // PriceCar
             // 
             this.PriceCar.AutoSize = true;
-            this.PriceCar.Location = new System.Drawing.Point(182, 138);
+            this.PriceCar.Location = new System.Drawing.Point(200, 135);
             this.PriceCar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.PriceCar.Name = "PriceCar";
             this.PriceCar.Size = new System.Drawing.Size(62, 20);
@@ -91,7 +93,7 @@ namespace CarShop
             // VEngineCar
             // 
             this.VEngineCar.AutoSize = true;
-            this.VEngineCar.Location = new System.Drawing.Point(182, 169);
+            this.VEngineCar.Location = new System.Drawing.Point(200, 169);
             this.VEngineCar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.VEngineCar.Name = "VEngineCar";
             this.VEngineCar.Size = new System.Drawing.Size(99, 20);
@@ -100,7 +102,7 @@ namespace CarShop
             // 
             // comments
             // 
-            this.comments.Location = new System.Drawing.Point(446, 210);
+            this.comments.Location = new System.Drawing.Point(446, 246);
             this.comments.Name = "comments";
             this.comments.Size = new System.Drawing.Size(446, 141);
             this.comments.TabIndex = 6;
@@ -120,7 +122,7 @@ namespace CarShop
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 138);
+            this.label2.Location = new System.Drawing.Point(10, 135);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
@@ -164,13 +166,15 @@ namespace CarShop
             this.pictureBox1.Location = new System.Drawing.Point(14, 14);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(424, 337);
+            this.pictureBox1.Size = new System.Drawing.Size(424, 373);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.PowerEngine);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -183,17 +187,37 @@ namespace CarShop
             this.groupBox1.Controls.Add(this.NameCar);
             this.groupBox1.Location = new System.Drawing.Point(443, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(449, 196);
+            this.groupBox1.Size = new System.Drawing.Size(449, 232);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Характеристики";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 203);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(182, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Мощность двигателя";
+            // 
+            // PowerEngine
+            // 
+            this.PowerEngine.AutoSize = true;
+            this.PowerEngine.Location = new System.Drawing.Point(200, 203);
+            this.PowerEngine.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PowerEngine.Name = "PowerEngine";
+            this.PowerEngine.Size = new System.Drawing.Size(137, 20);
+            this.PowerEngine.TabIndex = 12;
+            this.PowerEngine.Text = "[Power_Engine]";
             // 
             // ShowCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(231)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(911, 369);
+            this.ClientSize = new System.Drawing.Size(911, 401);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comments);
             this.Controls.Add(this.pictureBox1);
@@ -225,5 +249,7 @@ namespace CarShop
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label PowerEngine;
     }
 }

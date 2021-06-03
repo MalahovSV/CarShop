@@ -30,7 +30,7 @@ namespace CarShop
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                string select = $@"select Name_Make, Model, Car.Year_car, Car.Price, Car.V_Engine, Car.About, Car.Image_car from Make, Car
+                string select = $@"select Name_Make, Model, Car.Year_car, Car.Price, Car.V_Engine, Car.About, Car.Image_car, Car.Power_Engine from Make, Car
 where Car.ID_Make = Make.ID and Car.ID = {IDCar}";
                 SqlCommand command = new SqlCommand(select, connection);
                 SqlDataReader reader = command.ExecuteReader();
@@ -43,7 +43,7 @@ where Car.ID_Make = Make.ID and Car.ID = {IDCar}";
                     PriceCar.Text = reader.GetDecimal(3).ToString();
                     VEngineCar.Text = reader.GetDecimal(4).ToString();
                     comments.Text = reader.GetString(5);
-                    
+                    PowerEngine.Text = reader.GetInt32(7).ToString();
                     ImageCar = (byte[])reader.GetValue(6);
                     Stream stream = new MemoryStream(ImageCar);
                     var bitmap = new Bitmap(stream);
